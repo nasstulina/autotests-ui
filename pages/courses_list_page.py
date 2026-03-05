@@ -31,6 +31,10 @@ class CoursesListPage(BasePage):
         expect(self.courses_title).to_have_text('Courses')
 
 
+    def check_visible_create_course_button(self):
+        expect(self.create_course_button).to_be_visible()
+
+
     def check_visible_empty_view(self):
         expect(self.empty_view_icon).to_be_visible()
 
