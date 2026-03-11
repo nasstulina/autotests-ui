@@ -1,7 +1,6 @@
 from typing import Pattern
 
-from playwright.async_api import Page, expect
-
+from playwright.sync_api import Page, expect
 
 from components.base_component import BaseComponent
 
@@ -19,7 +18,7 @@ class SidebarListItemComponent(BaseComponent):
     def check_visible(self, title: str):
         expect(self.icon).to_be_visible()
 
-        expect(self.title).not_to_be_visible()
+        expect(self.title).to_be_visible()
         expect(self.title).to_have_text(title)
 
         expect(self.button).to_be_visible()
